@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
         private courseService: CourseService
     ) {}
 
-    courses: CourseDto[] = [];
+    courses: CourseDto[] = []; //array
 
     coursesWithTN: CourseWithTNDto[] = [];
 
