@@ -16,7 +16,8 @@ export class CourseService {
     constructor(private http: HttpClient) {}
 
     getCourseInfo(): Observable<CourseDto[]> {
-        debugger;
+        // debugger;
+        console.log(`${this.courseAddressUrl}`);
         return this.http.get<CourseDto[]>(`${this.courseAddressUrl}`);
     }
 
@@ -25,6 +26,8 @@ export class CourseService {
     }
 
     delete(courseName: String): Observable<Response> {
+        debugger;
+        console.log(`${this.courseDeleteUrl}/${courseName}`);
         return this.http.delete<Response>(`${this.courseDeleteUrl}/${courseName}`);
     }
 

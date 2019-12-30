@@ -1,6 +1,7 @@
 package com.mycompany.myapp.web.rest;
 
 import com.mycompany.myapp.domain.Course;
+import com.mycompany.myapp.domain.UserCourse;
 import com.mycompany.myapp.domain.dto.CourseDto;
 import com.mycompany.myapp.domain.dto.CourseWithTNDto;
 import com.mycompany.myapp.service.CourseService;
@@ -84,7 +85,7 @@ public class CourseController {
         }
     }
 
-    @DeleteMapping(path = "/api/course/deleteCourse/{courseName}", produces = "application/js")
+    @DeleteMapping(path = "/api/course/deleteCourse/{courseName}", produces = "application/json")
     public HttpStatus deleteCourse(@NotNull @PathVariable("courseName") String courseName) {
         try {
             courseService.deleteCourse(courseName);
@@ -94,7 +95,7 @@ public class CourseController {
         }
     }
 
-    @PostMapping(path = "/api/course/addCourseToStudent/{courseName}", produces = "application/js")
+    @PostMapping(path = "/api/course/addCourseToStudent/{courseName}", produces = "application/json")
     public HttpStatus addCourseToStudent(@NotNull @PathVariable("courseName") UserCourse userCourse) {
         try {
             courseService.addCourseToStudent(userCourse);
